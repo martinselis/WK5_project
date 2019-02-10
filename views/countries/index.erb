@@ -1,0 +1,14 @@
+<ul>
+<% @countries.each do |country| %>
+<li><a href="/countries/<%=country.id%>"><%=country.name %></a>
+  
+<form action="/countries/<%=country.id%>/edit" method="get">
+  <input type="submit" value="EDIT">
+</form>
+
+<form action="/countries/<%=country.id%>/delete" method="post">
+  <input type="submit" value="DELETE">
+</form>
+
+<% end %>
+</ul>

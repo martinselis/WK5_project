@@ -1,4 +1,5 @@
 require_relative('../db/sql_helper')
+require_relative('./city.rb')
 
 class Country
 
@@ -39,10 +40,25 @@ class Country
     return Country.new(result)
   end
 
+  def self.find_all
+    sql = "SELECT * FROM country"
+    result = SqlRunner.run(sql)
+    return result.map {|country| Country.new(country)}
+  end
+
   def self.delete_all
     sql = "DELETE FROM country"
     SqlRunner.run(sql)
   end
 
+  def cities
+    sql = "SELECT city.* from country
+    INNER JOIN city
+    ON city.country_id = country.id
+    WHERE country.id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+    return result.map {|city| City.new(city)}
+  end
 
 end
