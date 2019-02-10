@@ -15,3 +15,60 @@ nav h2 {
   margin: 20px auto;
   text-align: center;
 }
+
+#container {
+  display: grid;
+  grid-template-columns: 6fr 1fr;
+}
+
+#visits {
+  grid-column: 1/2;
+}
+
+#bucketItems {
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#countries {
+  grid-column: 2/3;
+}
+
+#countries a {
+ text-decoration: none;
+}
+
+.country {
+  display:grid;
+  grid-template-columns: 2fr 1fr;
+  text-align: center;
+  border: 1px solid black;
+  margin: 3px;
+}
+
+.countryName, .countryEdit {
+  height: 40px;
+  padding-top:15px;
+  color: black;
+}
+
+.countryName {
+  border-right: 1px solid black;
+  background-color: #B4C5A0;
+}
+
+.countryEdit {
+  height: 40px;
+  background-color: #DA967F;
+}
+
+#visitToggles {
+  display:block;
+  width: 300px;
+  float:right;
+}
+
+.toggle {
+  display: inline-block;
+  padding-left: 10px;
+}
