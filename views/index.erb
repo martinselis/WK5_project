@@ -1,1 +1,42 @@
-<p> pending visits </p>
+<div id="container">
+
+  <div id="visits">
+    <div id="visitToggles">
+      <a href="/visited">
+        <div class="toggle">Visited</div></a>
+      <a href="/not-visited">
+        <div class="toggle">Not yet visited</div></a>
+      <a href="/">
+        <div class="toggle">All</div>
+      </a>
+  </div>
+    <div id="bucketItems">
+      <% @bucketlist.each do |item| %>
+
+      <div class="bucketItem">
+        <p>City: <a href="/cities/<%=item.city.id%>/edit"><%=item.city.name%></a>, <%=item.city.country.name%> <p>
+        <p>Status: <%=item.visit_status %></p>
+        <p><a href="/visit/<%=item.id%>/update-status">Update status</a></p>
+      </div>
+
+      <% end %>
+    </div>
+    <a href="/cities/new">Add new city</a>
+  </div>
+  <div id="countries">
+    <% @countries.each do |country| %>
+    <a href="/cities/by-country/<%=country.id%>">
+      <div class="country">
+        <div class="countryName">
+          <%= country.name %>
+        </div>
+        <a href="/countries/<%=country.id%>/edit">
+          <div class="countryEdit">
+            EDIT
+          </div>
+        </a>
+      </div>
+    </a>
+    <% end %>
+  </div>
+</div>

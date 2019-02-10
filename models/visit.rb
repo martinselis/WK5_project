@@ -1,4 +1,5 @@
 require_relative('../db/sql_helper')
+require_relative('./city')
 
 class Visit
 
@@ -11,8 +12,18 @@ class Visit
     @visited = details["visited"]
   end
 
+  def city
+    sql = "SELECT city.* FROM visit
+    INNER JOIN city
+    ON visit.city_id = city.id
+    WHERE visit.id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values).first()
+    return City.new(result)
+  end
+
   def save
-    sql = "INSERT INTO visits(city_id, visited) VALUES($1, $2)
+    sql = "INSERT INTO visit(city_id, visited) VALUES($1, $2)
 
     returning id"
     values = [@city_id, @visited]
@@ -21,28 +32,57 @@ class Visit
   end
 
   def update
-    sql = "UPDATE visits SET (city_id, visited) = ($1, $2)
+    sql = "UPDATE visit SET (city_id, visited) = ($1, $2)
     WHERE ID = $3"
     values = [@city_id, @visited, @id]
     SqlRunner.run(sql, values)
   end
 
   def delete
-    sql = "DELETE FROM visits WHERE id = $1"
+    sql = "DELETE FROM visit WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end
 
   def self.find(id)
-    sql = "SELECT * FROM visits WHERE id = $1"
+    sql = "SELECT * FROM visit WHERE id = $1"
     values = [id]
     result = SqlRunner.run(sql,values).first()
     return Visit.new(result)
   end
 
+  def self.find_all
+    sql = "SELECT * FROM visit
+    ORDER BY id ASC"
+    results = SqlRunner.run(sql)
+    return results.map { |visit| Visit.new(visit)}
+  end
+
   def self.delete_all
-    sql = "DELETE FROM visits"
+    sql = "DELETE FROM visit"
     SqlRunner.run(sql)
   end
+
+  def visit_status
+    @visited == "t" ? "Visited" : "Not yet"
+  end
+
+  def self.find_visited()
+    sql = "SELECT * FROM visit WHERE visited is True"
+    result = SqlRunner.run(sql)
+    return result.map {|visit| Visit.new(visit)}
+  end
+
+  def self.find_not_visited()
+    sql = "SELECT * FROM visit WHERE visited is False"
+    result = SqlRunner.run(sql)
+    return result.map {|visit| Visit.new(visit)}
+  end
+
+  def update_status
+    @visited == "t" ? @visited = "f" : @visited = "t"
+    update()
+  end
+
 
 end

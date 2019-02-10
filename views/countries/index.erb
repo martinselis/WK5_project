@@ -1,7 +1,7 @@
 <ul>
 <% @countries.each do |country| %>
 <li><a href="/countries/<%=country.id%>"><%=country.name %></a>
-  
+
 <form action="/countries/<%=country.id%>/edit" method="get">
   <input type="submit" value="EDIT">
 </form>
@@ -12,3 +12,5 @@
 
 <% end %>
 </ul>
+
+<a href="/countries/new">Add new country</a>

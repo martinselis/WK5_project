@@ -1,4 +1,5 @@
 require_relative('../db/sql_helper')
+require_relative('./country')
 
 class City
 
@@ -23,7 +24,7 @@ class City
   def update
     sql = "UPDATE city SET (name, country_id) = ($1, $2)
     WHERE ID = $3"
-    values = [@name, @country_id]
+    values = [@name, @country_id, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -40,9 +41,23 @@ class City
     return City.new(result)
   end
 
+  def self.find_all
+    sql = "SELECT * FROM city"
+    result = SqlRunner.run(sql)
+    return result.map { |city| City.new(city) }
+  end
+
   def self.delete_all
     sql = "DELETE FROM city"
     SqlRunner.run(sql)
+  end
+
+  def country
+    sql = "SELECT country.* FROM country
+    INNER JOIN city
+    ON city.country_id = country.id"
+    result = SqlRunner.run(sql)
+    return Country.new(result.first())
   end
 
 end

@@ -41,7 +41,7 @@ end
 post '/countries/:id/delete' do
   @country = Country.find(params[:id])
   @country.delete
-  redirect "/countries"
+  redirect "/"
 end
 
 

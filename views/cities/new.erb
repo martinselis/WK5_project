@@ -1,0 +1,14 @@
+<form method="post" action="/cities">
+  <label for="city">
+  <input type="text" id="name" name="name">
+  <label for="country">
+  <select name="country_id">
+    <% @countries.each do |country| %>
+    <option value="<%= country.id %>"><%= country.name %></option>
+    <% end %>
+      <input id="visited" type="radio" name="visited" value="t">I've been there
+      <input id="visited" type="radio" name="visited" value="f">Planning to!
+  </select>
+  <br/>
+  <input type="submit" name="Create">
+</form>

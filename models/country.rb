@@ -1,5 +1,6 @@
 require_relative('../db/sql_helper')
 require_relative('./city.rb')
+require_relative('./visit.rb')
 
 class Country
 
@@ -59,6 +60,18 @@ class Country
     values = [@id]
     result = SqlRunner.run(sql, values)
     return result.map {|city| City.new(city)}
+  end
+
+  def self.visits_by_country(id)
+    sql = "SELECT visit.* FROM country
+    INNER JOIN city
+    ON country.id = city.country_id
+    INNER JOIN visit
+    ON city.id = visit.city_id
+    WHERE country.id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    return result.map { |visit| Visit.new(visit)}
   end
 
 end
