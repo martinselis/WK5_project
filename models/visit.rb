@@ -1,5 +1,6 @@
 require_relative('../db/sql_helper')
 require_relative('./city')
+require_relative('./sight')
 
 class Visit
 
@@ -116,6 +117,10 @@ class Visit
       end
     }
     return matching_search
+  end
+
+  def sights
+    sights = Sight.find_all_by_city(@id)
   end
 
 end

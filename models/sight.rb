@@ -42,7 +42,7 @@ class Sight
     return Sight.new(result)
   end
 
-  def self.find_all(id)
+  def self.find_all_by_city(id)
     sql = "SELECT sight.* FROM sight
     INNER JOIN visit
     on visit.id = sight.visit_id

@@ -29,8 +29,16 @@
       <% @bucketlist.each do |item| %>
 
       <div class="bucketItem">
-        <p class="city"><a href="/cities/<%=item.city.id%>/edit"><%=item.city.name%></a>, <%=item.city.country.name%> </p>
-        <p>Status: <%=item.visit_status %></p><a href="/visit/<%=item.id%>/update-status">Update status</a>
+        <div class="bucketDescription">
+          <p class="city"><a href="/cities/<%=item.city.id%>/edit"><%=item.city.name%></a>, <%=item.city.country.name%> </p>
+          <p>Status: <%=item.visit_status %></p><a href="/visit/<%=item.id%>/update-status">Update status</a>
+        </div>
+        <div class="bucketSights">
+          <ul>
+            <% item.sights.each do |sight| %>
+            <li><%= sight.name %>
+            <% end %>
+        </div>
       </div>
 
       <% end %>
