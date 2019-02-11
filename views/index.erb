@@ -1,15 +1,6 @@
 <div id="container">
-
-  <div id="visits">
-    <div id="visitToggles">
-      <a href="/visited">
-        <div class="toggle">Visited</div></a>
-      <a href="/not-visited">
-        <div class="toggle">Not yet visited</div></a>
-      <a href="/">
-        <div class="toggle">All</div>
-      </a>
-
+  <div id="searchandtoggles">
+    <div id="search">
       <form method="post" action="/search">
         <label>
         <input type="text" name="search">
@@ -18,14 +9,28 @@
           <input type="submit" value="Search">
         </label>
       </form>
+    </div>
+
+    <div id="visitToggles">
+      <a href="/visited">
+        <div class="toggle">Visited</div></a>
+      <a href="/not-visited">
+        <div class="toggle">Not yet visited</div></a>
+      <a href="/">
+        <div class="toggle">All</div>
+      </a>
+    </div>
+
   </div>
+
+  <div id="visits">
+
     <div id="bucketItems">
       <% @bucketlist.each do |item| %>
 
       <div class="bucketItem">
-        <p>City: <a href="/cities/<%=item.city.id%>/edit"><%=item.city.name%></a>, <%=item.city.country.name%> <p>
-        <p>Status: <%=item.visit_status %></p>
-        <p><a href="/visit/<%=item.id%>/update-status">Update status</a></p>
+        <p class="city"><a href="/cities/<%=item.city.id%>/edit"><%=item.city.name%></a>, <%=item.city.country.name%> </p>
+        <p>Status: <%=item.visit_status %></p><a href="/visit/<%=item.id%>/update-status">Update status</a>
       </div>
 
       <% end %>
