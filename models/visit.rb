@@ -106,4 +106,16 @@ class Visit
     return filtered_bucket_list
   end
 
+  def self.search(value)
+    value = value.downcase
+    bucketlist = Visit.find_all
+    matching_search = []
+    bucketlist.each { |item|
+      if (item.city.name.downcase == value || item.city.country.name.downcase == value)
+        matching_search << item
+      end
+    }
+    return matching_search
+  end
+
 end

@@ -1,4 +1,4 @@
-DROP TABLE visits;
+DROP TABLE visit;
 DROP TABLE city;
 DROP TABLE country;
 
@@ -13,7 +13,7 @@ CREATE TABLE city(
   country_id INT4 REFERENCES country(id) ON DELETE CASCADE
 );
 
-CREATE TABLE visits(
+CREATE TABLE visit(
   ID SERIAL8 PRIMARY KEY,
   CITY_ID INT4 REFERENCES city(id) ON DELETE CASCADE,
   visited BOOLEAN

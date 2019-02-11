@@ -23,7 +23,7 @@ city2.save
 city3.save
 city4.save
 
-visit1 = Visit.new({"city_id" => city1.id, "visited" => "true" })
+visit1 = Visit.new({"city_id" => city1.id, "visited" => True})
 visit1.save
 binding.pry
 nil

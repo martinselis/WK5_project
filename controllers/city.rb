@@ -57,18 +57,22 @@ end
 get '/cities/by-country/:id/visited' do
   @country = Country.find(params[:id])
   @countries = Country.find_all
-
   @bucketlist = Visit.visited_by_country(@country)
+  if @bucketlist.length > 1
+    erb(:"cities/by-country")
+  else
 
-  erb(:"cities/by-country")
+  end
 end
 
 get '/cities/by-country/:id/not-visited' do
+  binding.pry
   @country = Country.find(params[:id])
   @countries = Country.find_all
   @bucketlist = Visit.not_visited_by_country(@country)
   erb(:"cities/by-country")
 end
+
 
 
 #

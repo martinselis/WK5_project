@@ -29,6 +29,12 @@ get '/not-visited' do
   erb(:index)
 end
 
+post '/search' do
+  @countries = Country.find_all
+  @bucketlist = Visit.search(params[:search])
+  erb(:index)
+end
+
 
 
 # *Naming convention for REST*
