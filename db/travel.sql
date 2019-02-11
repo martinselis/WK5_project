@@ -1,3 +1,4 @@
+DROP TABLE sight;
 DROP TABLE visit;
 DROP TABLE city;
 DROP TABLE country;
@@ -22,5 +23,5 @@ CREATE TABLE visit(
 CREATE TABLE sight(
   ID SERIAL8 PRIMARY KEY,
   name VARCHAR(255),
-  visit_id REFERENCES visit(id) ON DELETE CASCADE
+  visit_id INT4 REFERENCES visit(id) ON DELETE CASCADE
 );
