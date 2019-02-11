@@ -36,10 +36,38 @@ post '/cities/:id' do
   redirect "/"
 end
 
+post '/cities/:id/delete' do
+  @city = City.find(params[:id])
+  @city.delete
+  redirect "/"
+end
+
 get '/cities/by-country/:id' do
   @bucketlist = Country.visits_by_country(params[:id])
   @countries = Country.find_all
-  erb(:index)
+  if @bucketlist.length == 0
+    @error = 1
+    erb(:"cities/new")
+  else
+    error = 0
+    erb(:"cities/by-country")
+  end
+end
+
+get '/cities/by-country/:id/visited' do
+  @country = Country.find(params[:id])
+  @countries = Country.find_all
+
+  @bucketlist = Visit.visited_by_country(@country)
+
+  erb(:"cities/by-country")
+end
+
+get '/cities/by-country/:id/not-visited' do
+  @country = Country.find(params[:id])
+  @countries = Country.find_all
+  @bucketlist = Visit.not_visited_by_country(@country)
+  erb(:"cities/by-country")
 end
 
 
@@ -62,12 +90,7 @@ end
 #   redirect "/countries"
 # end
 #
-# post '/countries/:id/delete' do
-#   @country = Country.find(params[:id])
-#   @country.delete
-#   redirect "/countries"
-# end
-#
+
 
 
 # *Naming convention for REST*

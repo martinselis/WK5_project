@@ -1,3 +1,6 @@
+<% if @error == 1 %>
+<p>You have not added any destinations in this country. Add one below:</p>
+<% end %>
 <form method="post" action="/cities">
   <label for="city">
   <input type="text" id="name" name="name">

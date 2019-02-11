@@ -6,13 +6,28 @@ require_relative('./models/country')
 require_relative('./models/visit')
 require_relative('controllers/country')
 require_relative('controllers/city')
+require_relative('controllers/visit')
+require ('pry')
+
 
 
 get '/' do
+  @bucketlist = Visit.find_all
+  @countries = Country.find_all
   erb(:index)
 end
 
+get '/visited' do
+  @bucketlist = Visit.find_visited
+  @countries = Country.find_all
+  erb(:index)
+end
 
+get '/not-visited' do
+  @bucketlist = Visit.find_not_visited
+  @countries = Country.find_all
+  erb(:index)
+end
 
 
 

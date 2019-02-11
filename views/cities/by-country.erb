@@ -1,12 +1,13 @@
+<!-- Add info by country -->
 <div id="container">
 
   <div id="visits">
     <div id="visitToggles">
-      <a href="/visited">
+      <a href="/cities/by-country/<%=@bucketlist[0].city.country.id%>/visited">
         <div class="toggle">Visited</div></a>
-      <a href="/not-visited">
+      <a href="/cities/by-country/<%=@bucketlist[0].city.country.id%>/not-visited">
         <div class="toggle">Not yet visited</div></a>
-      <a href="/">
+      <a href="/cities/by-country/<%=@bucketlist[0].city.country.id%>">
         <div class="toggle">All</div>
       </a>
   </div>

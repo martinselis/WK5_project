@@ -4,3 +4,8 @@
   <input type="text" id="name" name="name" value="<%=@city.name%>">
   <input type="submit" name="Update">
 </form>
+
+<form method="post" action="/cities/<%=@city.id%>/delete">
+  <label>Delete:</label>
+  <input type="submit" name="Delete">
+</form>

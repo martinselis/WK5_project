@@ -84,5 +84,26 @@ class Visit
     update()
   end
 
+  def self.visited_by_country(country)
+    all_bucket_list_items = Visit.find_visited()
+    filtered_bucket_list = []
+    all_bucket_list_items.each { |item|
+      if item.city.country.id == country.id
+        filtered_bucket_list << item
+      end
+    }
+    return filtered_bucket_list
+  end
+
+  def self.not_visited_by_country(country)
+    all_bucket_list_items = Visit.find_not_visited()
+    filtered_bucket_list = []
+    all_bucket_list_items.each { |item|
+      if item.city.country.id == country.id
+        filtered_bucket_list << item
+      end
+    }
+    return filtered_bucket_list
+  end
 
 end

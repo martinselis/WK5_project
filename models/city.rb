@@ -55,8 +55,10 @@ class City
   def country
     sql = "SELECT country.* FROM country
     INNER JOIN city
-    ON city.country_id = country.id"
-    result = SqlRunner.run(sql)
+    ON city.country_id = country.id
+    WHERE city.id = $1"
+    values = [@id]
+    result = SqlRunner.run(sql, values)
     return Country.new(result.first())
   end
 
