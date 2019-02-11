@@ -123,4 +123,9 @@ class Visit
     sights = Sight.find_all_by_city(@id)
   end
 
+  def add_sight(details)
+    sight = Sight.new(details)
+    sight.save
+  end
+
 end

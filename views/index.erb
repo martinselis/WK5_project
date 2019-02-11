@@ -35,9 +35,15 @@
         </div>
         <div class="bucketSights">
           <ul>
-            <% item.sights.each do |sight| %>
-            <li><%= sight.name %>
+            <% if item.sights.length > 0 %>
+              <% item.sights.each do |sight| %>
+              <li><a href="/sight/<%=sight.id%>/edit"><%= sight.name %></a> </li>
+              <% end %>
+              <% else %>
+              <li> No sights yet</li>
             <% end %>
+            <a href="/sight/<%=item.id%>/add-sight"><div class="addSight">Add</div></a>
+          </ul>
         </div>
       </div>
 

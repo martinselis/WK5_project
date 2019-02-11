@@ -1,0 +1,11 @@
+<h2> Edit sight </h2>
+<form method="post" action="/sight/<%=@sight.id%>">
+  <label for="name">
+  <input type="text" id="name" name="name" value="<%=@sight.name%>">
+
+  <input type="submit" value="Update">
+</form>
+
+<form method="post" action="/sight/<%=@sight.id%>/delete">
+  <input type="submit" value="Delete">
+</form>

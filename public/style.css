@@ -100,3 +100,33 @@ nav h2 {
   text-decoration: none;
   color: black;
 }
+
+.bucketItem {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.bucketDescription {
+  grid-column: 1/2
+}
+
+.bucketSights {
+  grid-column: 2/3;
+}
+
+.bucketSights a {
+  text-decoration: none;
+  color: black;
+}
+
+.addSight {
+  border-radius: 10px;
+  border: 1px solid black;
+  background-color: #B4C5A0;
+  font-family: 'Roboto Slab', serif;
+  margin-top: 10px;
+  padding: 5px;
+  text-align: center;
+  width: 30px;
+  height: 20px;
+}

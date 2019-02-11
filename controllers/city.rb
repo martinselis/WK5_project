@@ -4,6 +4,7 @@ also_reload ('./models/*')
 require_relative('../models/city')
 require_relative('../models/country')
 require_relative('../models/visit')
+require_relative('../models/sight')
 require ('pry')
 
 get '/cities' do

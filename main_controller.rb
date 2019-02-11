@@ -7,9 +7,9 @@ require_relative('./models/visit')
 require_relative('controllers/country')
 require_relative('controllers/city')
 require_relative('controllers/visit')
+require_relative('controllers/sight')
+
 require ('pry')
-
-
 
 get '/' do
   @bucketlist = Visit.find_all
