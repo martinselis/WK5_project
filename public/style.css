@@ -14,10 +14,12 @@ body #background {
   z-index: -1;
   background-image: url('background.jpg');
   background-size: cover;
+  -webkit-background-size: cover;
   background-attachment: fixed;
   opacity: 0.9;
   width: 100%;
   height: 100%;
+  padding-bottom: 200px;
 }
 
 
@@ -26,6 +28,7 @@ main {
   width: 95%;
   margin: 0 auto;
   border-radius: 10px;
+
 }
 
 nav {
@@ -98,13 +101,16 @@ nav a {
   width: 300px;
 }
 
-#search input[type="text"] {
+#search input[type=text] {
   height: 30px;
   width: 200px;
+  background-color: #BDE5E9;
 }
 
-#search input[type="submit"] {
-
+#search input[type=submit] {
+  width: 50px;
+  height: 20px;
+  font-weight: bold;
 }
 
 #container {
@@ -178,6 +184,10 @@ text-decoration: none;
   border-bottom-left-radius: 12px;
 }
 
+.countryName:hover {
+  background-color: #0FA3B1;
+}
+
 .countryEdit {
   height: 40px;
   width: 45px;
@@ -186,7 +196,7 @@ text-decoration: none;
   border-bottom-right-radius: 12px;
 }
 
-.countryName:hover, .countryEdit:hover{
+.countryEdit:hover{
   opacity: 0.7;
 }
 
@@ -217,7 +227,8 @@ margin: 0 auto;
 }
 
 .bucketDescription {
-  grid-column: 1/2
+  grid-column: 1/2;
+  text-align: center;
 }
 
 .bucketSights {
@@ -236,8 +247,7 @@ margin: 0 auto;
 
 .addSight {
   border-radius: 10px;
-  border: 1px solid black;
-  background-color: #B4C5A0;
+  background-color: #0FA3B1;
   font-family: 'Roboto Slab', serif;
   margin-top: 10px;
   padding: 3px 8px 8px 8px;
@@ -248,7 +258,7 @@ margin: 0 auto;
 }
 
 .addSight:hover {
-  background-color: #0FA3B1;
+  color: white;
 }
 
 #addItem {
@@ -266,4 +276,10 @@ margin: 0 auto;
   padding-left: 50px;
   width: 60px;
   height: 60px;
+
+}
+
+#addItem img:hover {
+  opacity: 0.7;
+
 }
