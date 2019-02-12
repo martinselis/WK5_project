@@ -1,17 +1,40 @@
-<% if @error == 1 %>
-<p>You have not added any destinations in this country. Add one below:</p>
-<% end %>
-<form method="post" action="/cities">
-  <label for="city">
-  <input type="text" id="name" name="name">
-  <label for="country">
-  <select name="country_id">
-    <% @countries.each do |country| %>
-    <option value="<%= country.id %>"><%= country.name %></option>
-    <% end %>
-      <input id="visited" type="radio" name="visited" value="t">I've been there
-      <input id="visited" type="radio" name="visited" value="f">Planning to!
-  </select>
-  <br/>
-  <input type="submit" name="Create">
-</form>
+<div id="addCityContainer">
+  <% if @error == 1 %>
+  <p>You have not added any destinations in this country. Add one below:</p>
+  <% end %>
+  <style type="text/css">
+    .row  {
+      margin-bottom: 20px;
+    }
+    .row label {
+      display: inline-block;
+      width: 200px;
+    }
+  </style>
+  <form method="post" action="/cities">
+      <div class="row">
+        <label for="city">Add destination:</label>
+        <input type="text" id="city" name="name">
+      </div>
+      <div class="row">
+        <label for="country">Choose Country: </label>
+        <select name="country_id" id="country">
+          <% @countries.each do |country| %>
+          <option value="<%= country.id %>"><%= country.name %></option>
+          <% end %>
+        </select>
+      </div>
+      <div class="row">
+        <label for="visited1">I've been there</label>
+        <input id="visited1" type="radio" name="visited" value="t">
+      </div>
+      <div class="row">
+        <label for="visited2">I haven't been there yet</label>
+        <input id="visited2" type="radio" name="visited" value="f">
+      </div>
+      <div class="row">
+        <input type="submit" name="Create">
+      </div>
+      </div>
+  </form>
+</div>

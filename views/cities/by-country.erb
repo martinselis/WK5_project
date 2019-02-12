@@ -1,28 +1,62 @@
-<!-- Add info by country -->
 <div id="container">
-
-  <div id="visits">
+  <div id="searchandtoggles">
     <div id="visitToggles">
-      <a href="/cities/by-country/<%=@bucketlist[0].city.country.id%>/visited">
+      <a href="/visited">
         <div class="toggle">Visited</div></a>
-      <a href="/cities/by-country/<%=@bucketlist[0].city.country.id%>/not-visited">
+      <a href="/not-visited">
         <div class="toggle">Not yet visited</div></a>
-      <a href="/cities/by-country/<%=@bucketlist[0].city.country.id%>">
+      <a href="/">
         <div class="toggle">All</div>
       </a>
+    </div>
+
+    <div id="search" class="mid">
+      <form method="post" action="/search">
+        <label>
+        <input type="text" name="search">
+        </label>
+        <label>
+          <input type="submit" value="Search">
+        </label>
+      </form>
+    </div>
+
   </div>
+
+  <div id="visits">
+
     <div id="bucketItems">
       <% @bucketlist.each do |item| %>
 
       <div class="bucketItem">
-        <p>City: <a href="/cities/<%=item.city.id%>/edit"><%=item.city.name%></a>, <%=item.city.country.name%> <p>
-        <p>Status: <%=item.visit_status %></p>
-        <p><a href="/visit/<%=item.id%>/update-status">Update status</a></p>
+        <div class="bucketDescription">
+          <p class="city"><a href="/cities/<%=item.city.id%>/edit"><%=item.city.name%></a>, <%=item.city.country.name%> </p>
+          <p>Status: <%=item.visit_status %></p><a href="/visit/<%=item.id%>/update-status">Update status</a>
+        </div>
+        <div class="bucketSights">
+          <ul>
+            <% if item.sights.length > 0 %>
+              <% item.sights.each do |sight| %>
+              <li><a href="/sight/<%=sight.id%>/edit"><%= sight.name %></a> </li>
+              <% end %>
+              <% else %>
+              <li> No sights yet</li>
+            <% end %>
+            <a href="/sight/<%=item.id%>/add-sight"><div class="addSight">Add</div></a>
+          </ul>
+        </div>
       </div>
 
       <% end %>
+
+        <div id="addItem">
+          <a href="/cities/new">
+            <img src="/plus.png" alt="plus sign add destination"></img>
+          </a>
+        </div>
+
+
     </div>
-    <a href="/cities/new">Add a new destination</a>
   </div>
   <div id="countries">
     <% @countries.each do |country| %>
