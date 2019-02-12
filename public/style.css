@@ -252,11 +252,34 @@ margin: 0 auto;
   padding:0;
   margin:0;
 }
+.cityName h3 {
+  color: black;
+  display: inline-block;
+  border-radius: 12px;
+  text-decoration: underline;
+}
+
+.cityName h3:hover {
+  opacity: 0.5;
+}
+
+.updateStatus {
+  color: black;
+}
 
 .bucketDescription {
   grid-column: 1/2;
   text-align: center;
+  color:black;
+  text-align: left;
+  padding-left: 35px;
 }
+
+.bucketDescription h4 {
+  padding: 0;
+  margin: 0;
+}
+
 
 .bucketSights {
   grid-column: 2/3;
@@ -267,25 +290,29 @@ margin: 0 auto;
   margin:0;
 }
 
+.bucketSights h3 {
+  text-align: center;
+}
+
 .bucketSights a {
   text-decoration: none;
   color: black;
 }
 
 .addSight {
-  border-radius: 10px;
-  background-color: #0FA3B1;
-  font-family: 'Roboto Slab', serif;
-  margin-top: 10px;
-  padding: 3px 8px 8px 8px;
-  text-align: center;
-  width: 35px;
-  height: 17px;
   transition-duration: 0.3s;
+  padding-top: 10px;
 }
 
-.addSight:hover {
-  color: white;
+.addSight img {
+  width: 28px;
+  height: 28px;
+  transition-duration: 0.3s;
+  border-radius: 15px;
+}
+
+.addSight img:hover {
+  opacity: 0.5s;
 }
 
 #addItem {
@@ -299,10 +326,10 @@ margin: 0 auto;
 }
 
 #addItem img {
-  padding-top: 25px;
-  padding-left: 50px;
-  width: 60px;
-  height: 60px;
+  padding-top: 40px;
+  padding-left: 55px;
+  width: 70px;
+  height: 70px;
 }
 
 #addItem img:hover {
@@ -317,16 +344,6 @@ margin: 0 auto;
 
 }
 
-/* .inputField input {
-  grid-column: input;
-  align-self: center;
-}
-
-.inputDescription label {
-
-  grid-column: label;
-  align-self: center;
-} */
 
 .row  {
   margin-bottom: 20px;
