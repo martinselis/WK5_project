@@ -94,7 +94,7 @@ nav a {
 }
 
 #search {
-  grid-column: 5/7;
+  grid-column: 4/6;
   width: 300px;
 }
 
@@ -125,6 +125,7 @@ nav a {
   width: 90%;
   margin: 10px auto;
   display:grid;
+  grid-auto-columns: minmax(300, auto);
   grid-gap: 30px;
   grid-template-columns: repeat(3, 1fr);
 }
@@ -132,12 +133,11 @@ nav a {
 .bucketItem {
   border-radius: 12px;
   background-color: #0FA3B1;
-  border: 1px solid black;
   padding-left: 45px;
   align-self: center;
   font-family: 'Roboto Slab', serif;
   padding: 3px 5px;
-
+  transition-duration: 0.3s;
 }
 
 #countries {
@@ -163,11 +163,12 @@ nav a {
   padding-top:15px;
   color: black;
   font-family: 'Roboto Slab', serif;
+  transition-duration: 0.3s;
 
 }
 
 .countryName {
-  background-color: #C5C5C5;
+  background-color: #BDE5E9;
   font-weight: bold;
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
@@ -177,6 +178,8 @@ nav a {
   height: 40px;
   width: 45px;
   background-color: #DA967F;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
 .countryName:hover, .countryEdit:hover{
@@ -187,7 +190,6 @@ nav a {
   display: inline-block;
   padding-left: 10px;
 }
-
 
 .mid {
 display: inline-block;
@@ -206,6 +208,8 @@ margin: 0 auto;
 .bucketItem {
   display:grid;
   grid-template-columns: 1fr 1fr;
+  padding:0;
+  margin:0;
 }
 
 .bucketDescription {
@@ -214,6 +218,11 @@ margin: 0 auto;
 
 .bucketSights {
   grid-column: 2/3;
+  background-color: #BDE5E9;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius:12px;
+  padding:0;
+  margin:0;
 }
 
 .bucketSights a {
@@ -227,8 +236,25 @@ margin: 0 auto;
   background-color: #B4C5A0;
   font-family: 'Roboto Slab', serif;
   margin-top: 10px;
-  padding: 5px;
+  padding: 3px 8px 5px 8px;
   text-align: center;
-  width: 30px;
+  width: 35px;
   height: 17px;
+  transition-duration: 0.3s;
+}
+
+.addSight:hover {
+  background-color: #0FA3B1;
+}
+
+#addItem {
+  border-radius:12px;
+  background-color: #BDE5E9;
+  font-family: 'Roboto Slab', serif;
+  font-size: 20px;
+}
+
+#addItem {
+  text-decoration: none;
+  color: black;
 }
