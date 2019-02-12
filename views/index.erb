@@ -1,16 +1,5 @@
 <div id="container">
   <div id="searchandtoggles">
-    <div id="search">
-      <form method="post" action="/search">
-        <label>
-        <input type="text" name="search">
-        </label>
-        <label>
-          <input type="submit" value="Search">
-        </label>
-      </form>
-    </div>
-
     <div id="visitToggles">
       <a href="/visited">
         <div class="toggle">Visited</div></a>
@@ -19,6 +8,17 @@
       <a href="/">
         <div class="toggle">All</div>
       </a>
+    </div>
+
+    <div id="search" class="mid">
+      <form method="post" action="/search">
+        <label>
+        <input type="text" name="search">
+        </label>
+        <label>
+          <input type="submit" value="Search">
+        </label>
+      </form>
     </div>
 
   </div>
