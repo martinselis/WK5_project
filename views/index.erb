@@ -44,9 +44,13 @@
           <p><%=item.visit_status %></p>
           Change to:
           <% if item.visit_status == "Visited" %>
-            <a class="updateStatus" href="/visit/<%=item.id%>/update-status">Visited</a>
+            <div class="updateStatus">
+              <a href="/visit/<%=item.id%>/update-status">Visited</a>
+            </div>
           <% else %>
-            <a class="updateStatus" href="/visit/<%=item.id%>/update-status">Not visited</a>
+          <div class="updateStatus">
+            <a href="/visit/<%=item.id%>/update-status">Not visited</a>
+          </div>
           <% end %></a>
         </div>
         <div class="bucketSights">

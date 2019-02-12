@@ -263,8 +263,18 @@ margin: 0 auto;
   opacity: 0.5;
 }
 
-.updateStatus {
+.updateStatus a {
   color: black;
+  font-size: 16px;
+}
+
+.updateStatus {
+  display: inline-block;
+  color: black;
+}
+
+.updateStatus:hover {
+  text-decoration: underline;
 }
 
 .bucketDescription {
@@ -273,6 +283,7 @@ margin: 0 auto;
   color:black;
   text-align: left;
   padding-left: 35px;
+  padding-bottom: 10px;
 }
 
 .bucketDescription h4 {
@@ -297,6 +308,15 @@ margin: 0 auto;
 .bucketSights a {
   text-decoration: none;
   color: black;
+}
+
+.bucketSights a {
+  text-decoration: none;
+  color: black;
+}
+
+.bucketSights li:hover {
+  text-decoration: underline;
 }
 
 .addSight {
@@ -336,7 +356,7 @@ margin: 0 auto;
   opacity: 0.7;
 }
 
-#addCityContainer, #addSightContainer {
+#addCityContainer, #addSightContainer, #editSight {
   width: 70%;
   margin-left: 15%;
   grid-template-columns: [label] auto [input] 1fr;
@@ -366,6 +386,11 @@ margin: 0 auto;
   border: 1px solid black;
   border-radius: 10px;
   margin-left: 270px;
+}
+
+.delete {
+  margin-top: 25px;
+  background-color: red;
 }
 
 #addSightContainer input[type=submit]{
