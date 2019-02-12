@@ -1,12 +1,16 @@
-<h2> Edit country</h2>
-<form method="post" action="/countries/<%=@country.id%>">
-  <label for="name">
-  <input type="text" id="name" name="name" value="<%=@country.name%>">
-
-  <input type="submit" name="Update">
-</form>
-
-<form method="post" action="/countries/<%=@country.id%>/delete">
-  <label>Delete:</label>
-  <input type="submit" name="Delete">
-</form>
+<div class="addEditCountry">
+  <form method="post" action="/countries/<%=@country.id%>">
+    <div class="row">
+      <label for="name">Edit country: </label>
+      <input type="text" id="name" name="name" value="<%=@country.name%>">
+    </div>
+    <div class="row">
+    <input type="submit" value="Update">
+    </div>
+  </form>
+  <div class="row">
+    <form method="post" action="/countries/<%=@country.id%>/delete">
+      <input type="submit" value="Delete">
+    </form>
+  </div>
+</div>

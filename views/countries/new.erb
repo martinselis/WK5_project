@@ -1,7 +1,11 @@
-<h2> Create a new country </h2>
-<form method="post" action="/countries">
-  <label for="name">
-  <input type="text" id="name" name="name">
-
-  <input type="submit" name="Create">
-</form>
+<div class="addEditCountry">
+  <form method="post" action="/countries">
+    <div class="row">
+      <label for="name">Add country name:</label>
+      <input type="text" id="name" name="name">
+    </div>
+    <div class="row">
+    <input type="submit" value="Create">
+    </form>
+  </div>
+</div>
