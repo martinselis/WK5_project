@@ -65,7 +65,7 @@ class Visit
   end
 
   def visit_status
-    @visited == "t" ? "Visited" : "Not yet"
+    @visited == "t" ? "Visited" : "Not visited"
   end
 
   def self.find_visited()

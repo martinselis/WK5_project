@@ -1,9 +1,12 @@
+<div id="addSightContainer">
+  <form method="post" action="/sight/<%=@visit.id%>/add-sight">
+    <div class="row">
 
-<form method="post" action="/sight/<%=@visit.id%>/add-sight">
-  <label>Sight:
-    <input type="text" name="name">
+      <label>Sight name:
+        <input type="text" name="name">
+      </label>
 
-  </label>
-  <input type="submit" value="Create">
-
-</form>
+    </div>
+    <input type="submit" value="Add">
+  </form>
+</div>

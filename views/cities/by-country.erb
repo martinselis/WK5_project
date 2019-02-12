@@ -1,5 +1,8 @@
 <div id="container">
   <div id="searchandtoggles">
+    <div class="searchAndTogglesDescription">
+      <h5>Filters:</h5>
+    </div>
     <div id="visitToggles">
       <a href="/visited">
         <div class="toggle">Visited</div></a>
@@ -9,7 +12,9 @@
         <div class="toggle">All</div>
       </a>
     </div>
-
+    <div class="searchAndTogglesDescription">
+      <h5> Search by city/country:</h5>
+    </div>
     <div id="search" class="mid">
       <form method="post" action="/search">
         <label>
@@ -31,7 +36,7 @@
       <div class="bucketItem">
         <div class="bucketDescription">
           <p class="city"><a href="/cities/<%=item.city.id%>/edit"><%=item.city.name%></a>, <%=item.city.country.name%> </p>
-          <p>Status: <%=item.visit_status %></p><a href="/visit/<%=item.id%>/update-status">Update status</a>
+          <p><%=item.visit_status %></p><a href="/visit/<%=item.id%>/update-status">Update status</a>
         </div>
         <div class="bucketSights">
           <ul>
@@ -59,8 +64,9 @@
     </div>
   </div>
   <div id="countries">
+    <ul>
     <% @countries.each do |country| %>
-    <a href="/cities/by-country/<%=country.id%>">
+    <li><a href="/cities/by-country/<%=country.id%>">
       <div class="country">
         <div class="countryName">
           <%= country.name %>
@@ -71,7 +77,8 @@
           </div>
         </a>
       </div>
-    </a>
+    </a></li>
     <% end %>
+  </ul>
   </div>
 </div>
