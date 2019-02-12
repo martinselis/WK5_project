@@ -53,13 +53,13 @@ nav h2 {
 nav a {
   text-decoration: none;
 }
-
+/* 
 #menu {
   display: block;
   width: 300px;
   margin: 20px auto;
   text-align: center;
-}
+} */
 
 #searchandtoggles {
   grid-column: 1/7;
@@ -291,18 +291,43 @@ margin: 0 auto;
 }
 
 #addCityContainer {
-  width: 50%;
-  margin: 0 auto;
+  width: 70%;
+  margin-left: 15%;
   grid-template-columns: [label] auto [input] 1fr;
   grid-gap: 20px;
+
 }
 
-.inputField input {
+/* .inputField input {
   grid-column: input;
   align-self: center;
 }
 
 .inputDescription label {
+
   grid-column: label;
   align-self: center;
+} */
+
+.row  {
+  margin-bottom: 20px;
+}
+
+.row label {
+  display: inline-block;
+  width: 270px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 20px;
+}
+
+.row input {
+  width: 200px;
+}
+
+.row input[type=submit] {
+  width: 70px;
+  background-color: #9EFAC7;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-left: 270px;
 }
