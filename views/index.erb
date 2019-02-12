@@ -16,7 +16,7 @@
         <input type="text" name="search">
         </label>
         <label>
-          <input type="submit" value="SEARCH">
+          <input type="submit" value="Search">
         </label>
       </form>
     </div>
@@ -51,7 +51,7 @@
 
         <div id="addItem">
           <a href="/cities/new">
-            <img src="plus.png" alt="plus sign add destination"></img>
+            <img src="/plus.png" alt="plus sign add destination"></img>
           </a>
         </div>
 
@@ -59,8 +59,9 @@
     </div>
   </div>
   <div id="countries">
+    <ul>
     <% @countries.each do |country| %>
-    <a href="/cities/by-country/<%=country.id%>">
+    <li><a href="/cities/by-country/<%=country.id%>">
       <div class="country">
         <div class="countryName">
           <%= country.name %>
@@ -71,7 +72,8 @@
           </div>
         </a>
       </div>
-    </a>
+    </a></li>
     <% end %>
+  </ul>
   </div>
 </div>
