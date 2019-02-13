@@ -5,6 +5,8 @@ require_relative('../models/city')
 require_relative('../models/country')
 require_relative('../models/visit')
 require_relative('../models/sight')
+require_relative('../models/toggles')
+
 require ('pry')
 
 get '/cities' do
@@ -44,8 +46,13 @@ post '/cities/:id/delete' do
 end
 
 get '/cities/by-country/:id' do
+  @country = Country.find(params[:id])
+
   @bucketlist = Country.visits_by_country(params[:id])
   @countries = Country.find_all
+  @active = Toggles.filterToggles("all")
+  @countryToggles = Toggles.countryToggles(@countries, @country.name)
+
   if @bucketlist.length == 0
     @error = 1
     erb(:"cities/new")
@@ -59,10 +66,15 @@ get '/cities/by-country/:id/visited' do
   @country = Country.find(params[:id])
   @countries = Country.find_all
   @bucketlist = Visit.visited_by_country(@country)
-  if @bucketlist.length > 1
-    erb(:"cities/by-country")
-  else
+  @active = Toggles.filterToggles("visited")
+  @countryToggles = Toggles.countryToggles(@countries, @country.name)
 
+  if @bucketlist.length == 0
+    @error = 1
+    erb(:"cities/new")
+  else
+    error = 0
+    erb(:"cities/by-country")
   end
 end
 
@@ -70,7 +82,16 @@ get '/cities/by-country/:id/not-visited' do
   @country = Country.find(params[:id])
   @countries = Country.find_all
   @bucketlist = Visit.not_visited_by_country(@country)
-  erb(:"cities/by-country")
+  @active = Toggles.filterToggles("not_visited")
+  @countryToggles = Toggles.countryToggles(@countries, @country.name)
+
+  if @bucketlist.length == 0
+    @error = 1
+    erb(:"cities/new")
+  else
+    error = 0
+    erb(:"cities/by-country")
+  end
 end
 
 

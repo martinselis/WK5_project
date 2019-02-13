@@ -5,11 +5,11 @@
     </div>
     <div id="visitToggles">
       <a href="/cities/by-country/<%=@bucketlist[0].city.country.id%>/visited">
-        <div class="toggle">Visited</div></a>
+        <div class="<%=@active['visited']%>">Visited</div></a>
       <a href="/cities/by-country/<%=@bucketlist[0].city.country.id%>/not-visited">
-        <div class="toggle">Not yet visited</div></a>
+        <div class="<%=@active['not_visited']%>">Not yet visited</div></a>
       <a href="/">
-        <div class="toggle">All</div>
+        <div class="<%=@active['all']%>">All</div>
       </a>
     </div>
     <div class="searchAndTogglesDescription">
@@ -84,7 +84,7 @@
     <% @countries.each do |country| %>
     <li><a href="/cities/by-country/<%=country.id%>">
       <div class="country">
-        <div class="countryName">
+        <div class="<%=@countryToggles[country.name]%>">
           <%= country.name %>
         </div>
         <a href="/countries/<%=country.id%>/edit">

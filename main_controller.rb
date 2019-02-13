@@ -15,21 +15,21 @@ require ('pry')
 get '/' do
   @bucketlist = Visit.find_all
   @countries = Country.find_all
-  @active = Toggles.toggleClasses("all")
+  @active = Toggles.filterToggles("all")
   erb(:index)
 end
 
 get '/visited' do
   @bucketlist = Visit.find_visited
   @countries = Country.find_all
-  @active = Toggles.toggleClasses("visited")
+  @active = Toggles.filterToggles("visited")
   erb(:index)
 end
 
 get '/not-visited' do
   @bucketlist = Visit.find_not_visited
   @countries = Country.find_all
-  @active = Toggles.toggleClasses("not_visited")
+  @active = Toggles.filterToggles("not_visited")
   erb(:index)
 end
 

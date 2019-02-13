@@ -1,6 +1,6 @@
 class Toggles
 
-  def self.toggleClasses(activeToggle)
+  def self.filterToggles(activeToggle)
     toggles = { "visited" => "toggle",
       "not_visited" => "toggle",
       "all" => "toggle"
@@ -9,6 +9,16 @@ class Toggles
     return toggles
   end
 
+  def self.countryToggles(countries, active = "none")
+  toggles = {}
+
+  countries.each { |country|
+    country.name == active ? toggles[country.name] = "countryName countryNameActive" :
+    toggles[country.name] = "countryName"
+  }
+
+  return toggles
+  end
 
 end
 

@@ -217,7 +217,7 @@ nav a {
   border-bottom-left-radius: 12px;
 }
 
-.countryName:hover {
+.countryName:hover, .countryNameActive {
   background-color: #0FA3B1;
 }
 

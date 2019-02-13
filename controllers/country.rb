@@ -7,6 +7,7 @@ require_relative('../models/visit')
 
 get '/countries' do
   @countries = Country.find_all
+  
   erb (:"countries/index")
 end
 
