@@ -1,7 +1,7 @@
 class Toggles
 
   def self.filterToggles(activeToggle)
-    
+
     toggles = { "visited" => "toggle",
       "not_visited" => "toggle",
       "all" => "toggle"
@@ -23,8 +23,3 @@ class Toggles
   end
 
 end
-
-# {
-#   "visited" => "toggle",
-#   "not_visited" => "toggle",
-#   "all" => "toggle activeToggle"}
