@@ -5,11 +5,11 @@
     </div>
     <div id="visitToggles">
       <a href="/visited">
-        <div class="toggle">Visited</div></a>
+        <div class="<%=@active['visited']%>">Visited</div></a>
       <a href="/not-visited">
-        <div class="toggle">Not yet visited</div></a>
+        <div class="<%=@active['not_visited']%>">Not yet visited</div></a>
       <a href="/">
-        <div class="toggle">All</div>
+        <div class="<%=@active['all']%>">All</div>
       </a>
     </div>
     <div class="searchAndTogglesDescription">

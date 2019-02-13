@@ -94,6 +94,11 @@ nav a {
   color: white;
 }
 
+
+.activeToggle {
+  color: white;
+}
+
 .searchAndTogglesDescription {
   grid-column: 1/2;
   text-align: right;

@@ -8,27 +8,28 @@ require_relative('controllers/country')
 require_relative('controllers/city')
 require_relative('controllers/visit')
 require_relative('controllers/sight')
+require_relative('./models/toggles')
 
 require ('pry')
 
 get '/' do
   @bucketlist = Visit.find_all
   @countries = Country.find_all
-  @active = "all"
+  @active = Toggles.toggleClasses("all")
   erb(:index)
 end
 
 get '/visited' do
   @bucketlist = Visit.find_visited
   @countries = Country.find_all
-  @active = "visited"
+  @active = Toggles.toggleClasses("visited")
   erb(:index)
 end
 
 get '/not-visited' do
   @bucketlist = Visit.find_not_visited
   @countries = Country.find_all
-  @active = "notvisited"
+  @active = Toggles.toggleClasses("not_visited")
   erb(:index)
 end
 
