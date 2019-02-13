@@ -14,18 +14,21 @@ require ('pry')
 get '/' do
   @bucketlist = Visit.find_all
   @countries = Country.find_all
+  @active = "all"
   erb(:index)
 end
 
 get '/visited' do
   @bucketlist = Visit.find_visited
   @countries = Country.find_all
+  @active = "visited"
   erb(:index)
 end
 
 get '/not-visited' do
   @bucketlist = Visit.find_not_visited
   @countries = Country.find_all
+  @active = "notvisited"
   erb(:index)
 end
 

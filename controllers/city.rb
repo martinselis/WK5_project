@@ -67,7 +67,6 @@ get '/cities/by-country/:id/visited' do
 end
 
 get '/cities/by-country/:id/not-visited' do
-  binding.pry
   @country = Country.find(params[:id])
   @countries = Country.find_all
   @bucketlist = Visit.not_visited_by_country(@country)
