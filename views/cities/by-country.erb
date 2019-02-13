@@ -43,7 +43,7 @@
           <h4><%=item.city.country.name%></h5>
           <p><%=item.visit_status %></p>
           Change to:
-          <% if item.visit_status == "Visited" %>
+          <% if item.visit_status != "Visited" %>
             <div class="updateStatus">
               <a href="/visit/<%=item.id%>/update-status">Visited</a>
             </div>
