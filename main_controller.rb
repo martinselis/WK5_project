@@ -36,6 +36,7 @@ end
 post '/search' do
   @countries = Country.find_all
   @bucketlist = Visit.search(params[:search])
+  @active = Toggles.filterToggles("not_visited")
   erb(:index)
 end
 

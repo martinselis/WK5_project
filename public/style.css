@@ -232,6 +232,32 @@ nav a {
 .countryEdit:hover{
   opacity: 0.7;
 }
+.addCountryImg {
+padding-top: 5px;
+}
+.addCountryImg img {
+  float: right;
+  width: 25px;
+  height: 25px;
+}
+
+.countryNameAdd {
+  grid-column: 2/3;
+  text-align: center;
+  border-radius: 12px;
+  margin: 3px;
+  margin-right: 10px;
+  padding: 5px;
+  height: 40px;
+  color: black;
+  font-family: 'Roboto Slab', serif;
+}
+
+.countryNameAdd a {
+  color: black;
+
+  font-weight: bold;
+}
 
 .toggle {
   display: inline-block;
