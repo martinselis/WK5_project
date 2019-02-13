@@ -39,16 +39,3 @@ post '/search' do
   @active = Toggles.filterToggles("not_visited")
   erb(:index)
 end
-
-
-
-# *Naming convention for REST*
-# |VERB  |PATH                    |ACTION |
-# |:——:|:———————————:|:——:|
-# |GET   |/app                     | index |
-# |GET   |/app/:id                  | show |
-# |GET   |/app/new                  | new  |
-# |POST |/app                     | create |
-# |GET   |/app/:id/edit          |  edit   |
-# |POST |/app/:id                 | update |
-# |POST |/app/:id/delete          | destroy|

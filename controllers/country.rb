@@ -7,7 +7,7 @@ require_relative('../models/visit')
 
 get '/countries' do
   @countries = Country.find_all
-  
+
   erb (:"countries/index")
 end
 
@@ -44,21 +44,3 @@ post '/countries/:id/delete' do
   @country.delete
   redirect "/"
 end
-
-
-
-
-
-
-
-
-# *Naming convention for REST*
-# |VERB  |PATH                    |ACTION |
-# |:——:|:———————————:|:——:|
-# |GET   |/app                     | index |
-# |GET   |/app/:id                  | show |
-# |GET   |/app/new                  | new  |
-# |POST |/app                     | create |
-# |GET   |/app/:id/edit          |  edit   |
-# |POST |/app/:id                 | update |
-# |POST |/app/:id/delete          | destroy|

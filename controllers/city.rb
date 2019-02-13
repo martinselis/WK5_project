@@ -93,38 +93,3 @@ get '/cities/by-country/:id/not-visited' do
     erb(:"cities/by-country")
   end
 end
-
-
-
-#
-# post '/countries' do
-#   @country = Country.new(params)
-#   @country.save
-#   redirect "/countries"
-# end
-#
-# get '/countries/:id/edit' do
-#   @country = Country.find(params[:id])
-#   erb(:"countries/edit")
-# end
-#
-# post '/countries/:id' do
-#   @country = Country.find(params[:id])
-#   @country.name = params["name"]
-#   @country.update
-#   redirect "/countries"
-# end
-#
-
-
-
-# *Naming convention for REST*
-# |VERB  |PATH                    |ACTION |
-# |:——:|:———————————:|:——:|
-# |GET   |/app                     | index |
-# |GET   |/app/:id                  | show |
-# |GET   |/app/new                  | new  |
-# |POST |/app                     | create |
-# |GET   |/app/:id/edit          |  edit   |
-# |POST |/app/:id                 | update |
-# |POST |/app/:id/delete          | destroy|

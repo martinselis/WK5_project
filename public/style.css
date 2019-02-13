@@ -53,13 +53,6 @@ nav h2 {
 nav a {
   text-decoration: none;
 }
-/*
-#menu {
-  display: block;
-  width: 300px;
-  margin: 20px auto;
-  text-align: center;
-} */
 
 #searchandtoggles {
   grid-column: 1/7;
@@ -418,6 +411,7 @@ margin: 0 auto;
   border: 1px solid black;
   border-radius: 10px;
   margin-left: 270px;
+  margin-top: 10px;
 }
 
 .delete {
